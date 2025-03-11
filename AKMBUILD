@@ -1,0 +1,8 @@
+modname=tcp-brutal
+modver=1.0.3
+built_modules='brutal.ko'
+
+build() {
+    touch "$builddir"/Makefile
+    make ${MAKEFLAGS:-} -C "$kernel_srcdir" M="$builddir" modules
+}
